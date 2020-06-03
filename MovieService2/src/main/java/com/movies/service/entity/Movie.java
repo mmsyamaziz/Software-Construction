@@ -6,6 +6,7 @@
 package com.movies.service.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name= "movie")
 public class Movie implements Serializable{
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -29,13 +30,16 @@ public class Movie implements Serializable{
     private String movieName;
     @Column(name="duration")
     private Integer duration;
+    @Column(name="releaseDate")
+    private Date releaseDate;
 
     public Movie() {
     }
 
-    public Movie(String movieName, Integer duration) {
+    public Movie(String movieName, Integer duration, Date releaseDate) {
         this.movieName = movieName;
         this.duration = duration;
+        this.releaseDate = releaseDate;
     }
     /**
      * @return the id
@@ -79,4 +83,17 @@ public class Movie implements Serializable{
         this.duration = duration;
     }
     
+    /**
+     * @return the releaseDate
+     */
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    /**
+     * @param releaseDate the releaseDate to set
+     */
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 }
