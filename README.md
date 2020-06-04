@@ -15,11 +15,11 @@ MySQL
 2)
 3) 
 4) GetAllMovies
-5) GetMovies 
+5) InsertMovies
 
 ## RestFul API functionality:
 1) GetAllMovies
 /getallMovies - GET - Returns a complete list of films from the database. For details on the film objects you will receive, see the Models section.
 2) GetMovies - by id
-/getMovies/{id} - GET - Takes a specific film id and returns the film with that id from the database. If no match is made then no film is returned.
+/SetMovies/{id} - POST - Takes a specific film id and returns the film with that id from the database. If no match is made then no film is returned.
 
