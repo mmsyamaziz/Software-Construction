@@ -31,7 +31,7 @@ public class MovieController {
         this.movieRepository = movieRepository;
     }
     
-    //Display all the data interm of JSON
+    //Display all the data in term of JSON
     @GetMapping("/all")
     public List<Movie> listMovies(){
         return movieRepository.findAll();
@@ -40,9 +40,10 @@ public class MovieController {
     @GetMapping("/Insert")
     public String insert(){
     //Just for testing insert dummy data
-    DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
     try{
-        movieRepository.save(new Movie("Avenger",2,df.parse("2020-01-20")));
+        movieRepository.save(new Movie("Avenger",2,df.parse("20/01/2020")));
+        movieRepository.save(new Movie("IronMan",1,df.parse("16/06/2019")));
     }
     catch(ParseException e) {
         e.printStackTrace();
