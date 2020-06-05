@@ -14,8 +14,8 @@ MySQL
 1) login
 2) Booking
 3) Payment
-4) GetAllMovies (RestFul API)
-5) InsertMovies (RestFul API)
+4) Display List Movie
+5) Insert Movies
 
 ## RestFul API functionality:
 1) GetAllMovies
