@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.movies.service.controller;
+package com.movies.service.restfulApi;
 
 import com.movies.service.entity.Movie;
 import com.movies.service.repository.MovieRepository;
