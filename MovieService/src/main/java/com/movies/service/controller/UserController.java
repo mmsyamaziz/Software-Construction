@@ -25,27 +25,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserController {
     
-    private final UsersRepository userRepository;
-
-    public UserController(UsersRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-        
-        @ModelAttribute("user")
-        public User loadEmpyModelBean(){
-            return new User();
-        }
-        
-             @RequestMapping("/Register")
-    public String addUser(){
-        return "Register";
-    }
-    
-        @PostMapping("/addUser")
-    public String AddUsers(User user, BindingResult result,Model model){
-        userRepository.save(user);
-        model.addAttribute("user",new User());
-        return "Register";
-    }
     
 }

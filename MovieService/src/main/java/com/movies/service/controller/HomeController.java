@@ -6,8 +6,10 @@
 package com.movies.service.controller;
 
 import com.movies.service.entity.Movie;
+import com.movies.service.entity.User;
 import com.movies.service.repository.MovieRepository;
 import com.movies.service.repository.MoviesRepository;
+import com.movies.service.repository.UsersRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,12 +30,33 @@ public class HomeController {
     
     private final MoviesRepository movieRepository;
     private final MovieRepository moviRepository;
-            
-    @Autowired
-    public HomeController(MoviesRepository movieRepository,MovieRepository moviRepository) {
+    private final UsersRepository userRepository;        
+    
+       @Autowired
+    public HomeController(MoviesRepository movieRepository,MovieRepository moviRepository,UsersRepository userRepository) {
         this.movieRepository = movieRepository;
         this.moviRepository = moviRepository;
+        this.userRepository = userRepository;
     }
+
+        //@ModelAttribute("user")
+       // public User loadEmpyModelBean(){
+       //     return new User();
+       // }
+        
+        @RequestMapping("/register")
+        public String addUser(Model model){
+        model.addAttribute("user",new User());    
+        return "Register";
+    }
+    
+        @PostMapping("/addUser")
+        public String AddUsers(User user, BindingResult result,Model model){
+        userRepository.save(user);
+        model.addAttribute("user",new User());
+        return "Register";
+    }
+    
     @RequestMapping("/Index")
     public String Index(){
         return "index";
