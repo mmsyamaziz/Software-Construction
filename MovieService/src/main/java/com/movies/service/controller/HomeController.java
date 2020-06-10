@@ -57,7 +57,9 @@ public class HomeController {
     }
     
     @RequestMapping("/deleteMovies")
-    public String deleteMovie(){
+    public String deleteMovie(Model model){
+        List<Movie> movie = moviRepository.findAll();
+        model.addAttribute("movies", movie);
         return "DeleteMovies";
     }
     
@@ -94,5 +96,11 @@ public class HomeController {
     model.addAttribute("movies", movieRepository.findAll());
     return "editForm";
 }
-    
+        @GetMapping("/delete/{id}")
+        public String deleteMovie(@PathVariable("id") Integer id, Model model) {
+        Movie movie = movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id)); 
+        movieRepository.delete(movie);
+        model.addAttribute("movies", movieRepository.findAll());
+        return "DeleteMovies";
+}
 }
