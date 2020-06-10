@@ -6,11 +6,48 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Cinema Booking Service</title>
+        <title>Cinema Management Service</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+         <script src="webjars/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
     </head>
     <body>
+            <div class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand" style="width:25%;float: left;">
+            <h5 style="font-family: sans-serif;text-align: left;">
+                Cinema Management Service
+            </h5>
+        </div>
+    <ul class="nav navbar-nav text-xs-center mr-auto">
+        <li>
+            <a class="nav-link active text-center" href="/">
+                <span class="fa fa-home" aria-hidden="true"></span>
+                 Home
+            </a>
+        </li>
+        <li class="nav-item" style="margin-left:10px;margin-right:0px;">
+            <a class="nav-link text-center" href="/addMovies">
+                 <span class="fa fa-phone" aria-hidden="true"></span>
+                    Add Movies
+            </a>
+        </li>
+        <li class="nav-item" style="margin-left:10px;margin-right:0px;">
+            <a class="nav-link text-center" href="/deleteMovies">
+                 <span class="fa fa-phone" aria-hidden="true"></span>
+                    Delete Movies
+            </a>
+        </li>
+        <li class="nav-item" style="margin-left:10px;margin-right:0px;">
+            <a class="nav-link text-center" href="/updateMovies">
+                 <span class="fa fa-phone" aria-hidden="true"></span>
+                    Update Movies
+            </a>
+        </li>
+    </ul>
+    </div>
+ </div>
         <div>Update Movies</div>
         
     </body>
