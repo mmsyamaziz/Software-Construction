@@ -62,17 +62,17 @@ and open the template in the editor.
     </ul>
     </div>
  </div>
- <div th:switch="${movies}">
+ <div th:switch="${movies}" class="container" style="padding-top:5px; padding-bottom:30px;">
     <h2 th:case="null">No users yet!</h2>
         <div th:case="*">
             <h2>Delete Movies</h2>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Movie Name</th>
-                        <th>Duration</th>
-                        <th>Date</th>
-                        <th>Delete</th>
+                        <th scope="col">Movie Name</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
