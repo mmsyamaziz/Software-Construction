@@ -92,7 +92,7 @@ public class HomeController {
     
     movieRepository.save(movie);
     model.addAttribute("movies", movieRepository.findAll());
-    return "Index";
+    return "editForm";
 }
     
 }

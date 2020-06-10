@@ -1,3 +1,4 @@
+
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org"
     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -58,17 +59,17 @@
  </div>
 
 
-<form action="#" th:action="@{/update/{id}(id=${movie.id})}" th:object="${movie}" method="post">
-    <label for="Movie Name">Movie Name</label>
-    <input type="text" th:field="*{movieName}" id="name" placeholder="Movie Name">
+    <form action="#" th:action="@{/update/{id}(id=${movie.id})}" th:object="${movie}" method="post">
+        <label for="Movie Name">Movie Name</label>
+        <input type="text" th:field="*{movieName}" id="name" placeholder="Movie Name"/>
    <!-- <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <label for="email">Duration</label>
-    <input type="text" th:field="*{duration}" id="duration" placeholder="Duration">
+        <label for="email">Duration</label>
+        <input type="text" th:field="*{duration}" id="duration" placeholder="Duration"/>
   <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <label for="email">Release Data</label>
-    <input type="text" th:field="*{releaseDate}" id="date" placeholder="release Date">
+        <label for="email">Release Data</label>
+        <input type="text" th:field="*{releaseDate}" id="date" placeholder="release Date"/>
   <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <input type="submit" value="Update User">   
-</form>
- 
+    <input type="submit" value="Update User"/>   
+    </form>
+    </body>
 </html>
