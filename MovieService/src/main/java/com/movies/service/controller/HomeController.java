@@ -6,11 +6,9 @@
 package com.movies.service.controller;
 
 import com.movies.service.entity.Movie;
-import com.movies.service.entity.User;
 import com.movies.service.repository.MovieRepository;
 import com.movies.service.repository.MoviesRepository;
 import java.util.List;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +18,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
@@ -30,11 +27,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
     
     private final MoviesRepository movieRepository;
-    MovieRepository moviRepository;
+    private final MovieRepository moviRepository;
             
     @Autowired
-    public HomeController(MoviesRepository movieRepository) {
+    public HomeController(MoviesRepository movieRepository,MovieRepository moviRepository) {
         this.movieRepository = movieRepository;
+        this.moviRepository = moviRepository;
     }
     @RequestMapping("/Index")
     public String Index(){
@@ -49,7 +47,7 @@ public class HomeController {
     @RequestMapping("/editForm")
      public String editForm(Model model){
         List<Movie> movie = moviRepository.findAll();
-        model.addAttribute("movies",movie);
+        model.addAttribute("movies", movie);
         return "EditForm";
     }
     
