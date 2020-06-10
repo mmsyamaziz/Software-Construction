@@ -13,6 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -31,10 +34,10 @@ public class Movie implements Serializable{
     @Column(name="duration")
     private Integer duration;
     @Column(name="releaseDate")
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date releaseDate;
 
-    public Movie() {
-    }
+    public Movie() {}
 
     public Movie(String movieName, Integer duration, Date releaseDate) {
         this.movieName = movieName;
