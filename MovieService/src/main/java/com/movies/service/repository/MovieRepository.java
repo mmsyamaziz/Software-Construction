@@ -7,11 +7,15 @@ package com.movies.service.repository;
 
 import com.movies.service.entity.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author FIQMANAN
  */
+@Repository
 public interface MovieRepository extends JpaRepository<Movie,Integer> {
     
+
 }
+

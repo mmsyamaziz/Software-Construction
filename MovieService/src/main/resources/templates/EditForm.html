@@ -57,18 +57,29 @@
     </div>
  </div>
 
-
-<form action="#" th:action="@{/update/{id}(id=${movie.id})}" th:object="${movie}" method="post">
-    <label for="Movie Name">Movie Name</label>
-    <input type="text" th:field="*{movieName}" id="name" placeholder="Movie Name">
-   <!-- <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <label for="email">Duration</label>
-    <input type="text" th:field="*{duration}" id="duration" placeholder="Duration">
-  <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <label for="email">Release Data</label>
-    <input type="text" th:field="*{releaseDate}" id="date" placeholder="release Date">
-  <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <input type="submit" value="Update User">   
-</form>
- 
+<div th:switch="${movies}">
+    <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Movie Name</th>
+                        <th>Duration</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="movie : ${movies}">
+                    <td th:text="${movie.movieName}"></td>
+                    <td th:text="${movie.duration}"></td>
+                    <td th:text="${movie.releaseDate}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${movie.id})}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new user</a></p>
+</div>
 </html>

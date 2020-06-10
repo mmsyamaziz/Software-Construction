@@ -13,5 +13,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author FIQMANAN
  */
 public interface MoviesRepository extends CrudRepository<Movie,Integer>{
+
+    public Object findById(long id);
     
 }
