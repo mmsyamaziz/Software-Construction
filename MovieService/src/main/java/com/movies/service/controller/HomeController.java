@@ -16,8 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     
     //This will mapping to the addmovies link on the templates
-    @RequestMapping("/Home")
+    @RequestMapping("/addMovies")
     public String addMovies(){
         return "addMovies";
+    }
+    
+    @RequestMapping("/updateMovies")
+    public String updateMovies(){
+        return "UpdateMovie";
+    }
+    
+    @RequestMapping("/deleteMovies")
+    public String deleteMovie(){
+        return "DeleteMovies";
     }
 }

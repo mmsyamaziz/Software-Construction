@@ -26,9 +26,4 @@ public class MovieController {
         public MovieController(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
-        @RequestMapping(value="/AddNewMovie", method= RequestMethod.POST)
-        public String AddMovie(Model model){
-            model.addAttribute("movie",new Movie());
-            return "redirect:/";
-    }
 }

@@ -11,23 +11,23 @@ and open the template in the editor.
         <meta charset="UTF-8"></meta>
     </head>
     <body>
-       <div>
-      <h2>Add New Movie</h2>
-      <form action="#" th:action="@{/AddNewMovie}" th:object="${movie}">
-        <div class="form-group">
-          <label for="add-name">Movie Name</label>
-          <input class="form-control" id="movieName" th:field="*{duration}"/>
-        </div>
-        <div class="form-group">
-          <label for="add-description">Duration</label>
-          <input class="form-control" id="duration" th:field="*{duration}"/>
-        </div>
-        <div class="form-group">
-          <label for="add-price">Release Date</label>
-          <input type="date" class="form-control" id="dateRelease" th:field="{releaseDate}"/>
-        </div>
-        <button type="submit" class="btn btn-primary" id="btnSave">Add Movies</button>
-      </form>
+    <div class="container" style="padding-top:5px; padding-bottom:30px;">
+        <h2>Add New Movie</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="add-name">Movie Name</label>
+                <input class="form-control" id="movieName" />
+            </div>
+            <div class="form-group">
+                <label for="add-description">Duration</label>
+                <input class="form-control" id="duration" />
+            </div>
+            <div class="form-group">
+                <label for="add-price">Release Date</label>
+                <input type="date" class="form-control" id="dateRelease" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSave">Add Movies</button>
+        </form>
     </div>
     </body>
 </html>

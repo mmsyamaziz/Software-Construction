@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  *
  * @author FIQMANAN
+ * All the RestFul API 
  */
 @RestController
 @RequestMapping("/rest")
