@@ -36,7 +36,7 @@ public class HomeController {
     }
     @RequestMapping("/Index")
     public String Index(){
-        return "Index";
+        return "index";
     }
     //This will mapping to the addmovies link on the templates
     @RequestMapping("/addMovies")
@@ -81,7 +81,7 @@ public class HomeController {
         Movie movie = movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id)); 
         model.addAttribute("movie", movie);
         return "UpdateMovie";
-}
+    }
      
     @PostMapping("/update/{id}")
     public String UpdateUser(@PathVariable("id") Integer id, Movie movie, BindingResult result, Model model) {
@@ -92,7 +92,6 @@ public class HomeController {
     
     movieRepository.save(movie);
     model.addAttribute("movies", movieRepository.findAll());
-    return "editForm";
-}
-    
+    return "EditForm";
+    }
 }

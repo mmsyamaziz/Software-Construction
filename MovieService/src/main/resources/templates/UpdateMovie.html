@@ -1,25 +1,22 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org"
     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <title>Add New Movie</title>
-        <meta charset="UTF-8"></meta>
-         <link href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-         <link href="webjars/jquery-ui/1.12.1/jquery-ui.css" rel="stylesheet" />
-         <script src="webjars/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
-         <script src="webjars/jquery/3.5.1/jquery.min.js" ></script>
-         <script src="webjars/jquery-ui/1.12.1/jquery-ui.js" ></script>
-         <script>
-            $(document).ready(function() {
-
-            $('.datepicker').datepicker({
-                format: 'dd/mm/yyyy'
-                });
-            });
-        </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <title>Cinema Management Service</title>
+         <meta charset="UTF-8"></meta>
+         <link href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+         <link href="/webjars/jquery-ui/1.12.1/jquery-ui.css" rel="stylesheet" />
+         <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
+         <script src="/webjars/jquery/3.5.1/jquery.min.js" ></script>
     </head>
     <body>
     <div class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -49,27 +46,31 @@
             </a>
         </li>
         <li class="nav-item" style="margin-left:10px;margin-right:0px;">
-            <a class="nav-link text-center" href="/updateMovies">
+            <a class="nav-link text-center" href="/editForm">
                  <span class="fa fa-phone" aria-hidden="true"></span>
                     Update Movies
             </a>
         </li>
     </ul>
     </div>
- </div>
-
-
+    </div>
+    <div class="container" style="padding-top:5px; padding-bottom:30px;">
+    <h2>Edit Details</h2>
     <form action="#" th:action="@{/update/{id}(id=${movie.id})}" th:object="${movie}" method="post">
+        <div class="form-group">
         <label for="Movie Name">Movie Name</label>
-        <input type="text" th:field="*{movieName}" id="name" placeholder="Movie Name"/>
-   <!-- <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
+            <input type="text" th:field="*{movieName}" id="name" placeholder="Movie Name"/>
+        </div>   
+        <div class="form-group">
         <label for="email">Duration</label>
-        <input type="text" th:field="*{duration}" id="duration" placeholder="Duration"/>
-  <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
+            <input type="text" th:field="*{duration}" id="duration" placeholder="Duration"/>
+        </div>
+        <div class="form-group">
         <label for="email">Release Data</label>
-        <input type="text" th:field="*{releaseDate}" id="date" placeholder="release Date"/>
-  <!--  <span th:if="${#fields.hasErrors('movie')}" th:errors="*{movie}"></span>-->
-    <input type="submit" value="Update User"/>   
+            <input type="text" th:field="*{releaseDate}" id="date" placeholder="release Date"/>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Update User"/>   
     </form>
+    </div>
     </body>
 </html>

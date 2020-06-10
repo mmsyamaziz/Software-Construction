@@ -1,14 +1,21 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org"
     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <title>Add New Movie</title>
+        <title>Cinema Management Service</title>
         <meta charset="UTF-8"></meta>
-         <link href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-         <link href="webjars/jquery-ui/1.12.1/jquery-ui.css" rel="stylesheet" />
-         <script src="webjars/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
-         <script src="webjars/jquery/3.5.1/jquery.min.js" ></script>
+         <link href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+         <link href="/webjars/jquery-ui/1.12.1/jquery-ui.css" rel="stylesheet" />
+         <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
+         <script src="/webjars/jquery/3.5.1/jquery.min.js" ></script>
     </head>
     <body>
     <div class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -38,26 +45,26 @@
             </a>
         </li>
         <li class="nav-item" style="margin-left:10px;margin-right:0px;">
-            <a class="nav-link text-center" href="/updateMovies">
+            <a class="nav-link text-center" href="/editForm">
                  <span class="fa fa-phone" aria-hidden="true"></span>
                     Update Movies
             </a>
         </li>
     </ul>
     </div>
- </div>
+    </div>
 
-<div th:switch="${movies}">
+<div th:switch="${movies}" class="container" style="padding-top:5px; padding-bottom:30px;">
     <h2 th:case="null">No users yet!</h2>
         <div th:case="*">
-            <h2>Users</h2>
-            <table>
+            <h2>List of Movies</h2>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Movie Name</th>
-                        <th>Duration</th>
-                        <th>Date</th>
-                        <th>Edit</th>
+                        <th scope="col">Movie Name</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,7 +77,6 @@
             </tbody>
         </table>
     </div>      
-    <p><a href="/signup">Add a new user</a></p>
     </div>
     </body>
 </html>
